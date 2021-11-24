@@ -1,11 +1,19 @@
 {
   "name": "synvia-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/index.ts",
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
-    "husky": "^7.0.4"
+    "@types/node": "^16.11.10",
+    "husky": "^7.0.4",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
   }
 }
