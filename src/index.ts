@@ -3,6 +3,9 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import helmet from "helmet";
 
+import { notFound } from "./middlewares/notFound";
+import { errorHandler } from "./middlewares/errorHandler";
+
 dotenv.config();
 
 const app = express();
@@ -15,5 +18,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({ message: "Hello World" });
 });
+
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(appPort, () => console.log(`> Server started on port ${appPort}`));
