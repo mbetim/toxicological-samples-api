@@ -1,0 +1,228 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-11-25T21:06:58.897Z",
+  "__export_source": "insomnia.desktop.app:v2021.6.0",
+  "resources": [
+    {
+      "_id": "req_ad3541b835294995a4727cbd425767f9",
+      "parentId": "fld_dfcc7aab2d7c453b8d2bc937eca834f1",
+      "modified": 1637874350707,
+      "created": 1637839650324,
+      "url": "{{baseUrl}}/toxicological/samples",
+      "name": "Exam sample",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"codigo_amostra\": \"02383322\",\n\t\"Cocaína\": 0.678,\n\t\"Anfetamina\": 0.1,\n\t\"Metanfetamina\": 0.1,\n\t\"MDA\": 0.1,\n\t\"MDMA\": 0.3,\n\t\"THC\": 0.03,\n\t\"Morfina\": 0.1,\n\t\"Codeína\": 0.1,\n\t\"Heroína\": 0.1,\n\t\"Benzoilecgonina\": 0,\n\t\"Cocaetileno\": 0,\n\t\"Norcocaína\": 0\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_c69a95648d1b4d38a46c19d022b53589"
+        }
+      ],
+      "authentication": { "type": "bearer", "token": "{{token}}", "disabled": false },
+      "metaSortKey": -1637839650324,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_dfcc7aab2d7c453b8d2bc937eca834f1",
+      "parentId": "wrk_525a5905c6af4afe872b6b03dc4b6e06",
+      "modified": 1637874314253,
+      "created": 1637839638450,
+      "name": "Toxicological",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1637839638450,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_525a5905c6af4afe872b6b03dc4b6e06",
+      "parentId": null,
+      "modified": 1637874296427,
+      "created": 1637714824546,
+      "name": "Toxicological samples - API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_be6d15b1a89949eab834b37346c345bb",
+      "parentId": "fld_dfcc7aab2d7c453b8d2bc937eca834f1",
+      "modified": 1637874303979,
+      "created": 1637871180694,
+      "url": "{{baseUrl}}/toxicological/samples",
+      "name": "Get all",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": { "type": "bearer", "token": "{{token}}", "disabled": false },
+      "metaSortKey": -1637777253831.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_fd90d7757851431da99842baef95467d",
+      "parentId": "fld_cc1f799fd6fe42139f69e7c5ebeacf0d",
+      "modified": 1637873990429,
+      "created": 1637714857339,
+      "url": "{{baseUrl}}/auth/signup",
+      "name": "Sign up",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Matheus Betim\",\n\t\"email\": \"mbetim47@gmail.com\",\n\t\"password\": \"123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_23fdbfa0ffaf47bba3fc9252e8dfb017"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1637714857339,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_cc1f799fd6fe42139f69e7c5ebeacf0d",
+      "parentId": "wrk_525a5905c6af4afe872b6b03dc4b6e06",
+      "modified": 1637808846239,
+      "created": 1637808846239,
+      "name": "Auth",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1637808846239,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_0a3ef098b7da4c93a82ffc2f01e83b71",
+      "parentId": "fld_cc1f799fd6fe42139f69e7c5ebeacf0d",
+      "modified": 1637874371014,
+      "created": 1637808856434,
+      "url": "{{baseUrl}}/auth/login",
+      "name": "Login",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"mbetim47@gmail.com\",\n\t\"password\": \"123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_23fdbfa0ffaf47bba3fc9252e8dfb017"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1637437899996.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_ec5d69e3d5671ddd9221464f914499ceafdd1b95",
+      "parentId": "wrk_525a5905c6af4afe872b6b03dc4b6e06",
+      "modified": 1637873697339,
+      "created": 1637714824556,
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "localhost:3000/api/v1",
+        "token": "{% response 'body', 'req_0a3ef098b7da4c93a82ffc2f01e83b71', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "dataPropertyOrder": { "&": ["baseUrl", "token"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1637714824556,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_ec5d69e3d5671ddd9221464f914499ceafdd1b95",
+      "parentId": "wrk_525a5905c6af4afe872b6b03dc4b6e06",
+      "modified": 1637714824561,
+      "created": 1637714824561,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_e376dc19e3b44e588e9268793b92015d",
+      "parentId": "wrk_525a5905c6af4afe872b6b03dc4b6e06",
+      "modified": 1637714824548,
+      "created": 1637714824548,
+      "fileName": "Toxicological Samples",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_6660cad467344c25945d20620299a728",
+      "parentId": "env_ec5d69e3d5671ddd9221464f914499ceafdd1b95",
+      "modified": 1637874366998,
+      "created": 1637873701167,
+      "name": "Local",
+      "data": {
+        "baseUrl": "localhost:3000/api/v1",
+        "token": "{% response 'body', 'req_0a3ef098b7da4c93a82ffc2f01e83b71', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "dataPropertyOrder": { "&": ["baseUrl", "token"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1637873701167,
+      "_type": "environment"
+    },
+    {
+      "_id": "env_ecf41b930aa04566bd50567c430a4de7",
+      "parentId": "env_ec5d69e3d5671ddd9221464f914499ceafdd1b95",
+      "modified": 1637874366255,
+      "created": 1637873706866,
+      "name": "Prod",
+      "data": {
+        "baseUrl": "https://toxicological-samples.herokuapp.com/api/v1",
+        "token": "{% response 'body', 'req_0a3ef098b7da4c93a82ffc2f01e83b71', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "dataPropertyOrder": { "&": ["baseUrl", "token"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1637873706866,
+      "_type": "environment"
+    }
+  ]
+}
