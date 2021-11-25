@@ -5,6 +5,7 @@ import helmet from "helmet";
 
 import { notFound } from "./middlewares/notFound";
 import { errorHandler } from "./middlewares/errorHandler";
+import { dbConnect } from "./lib/dbConnect";
 
 dotenv.config();
 
@@ -22,4 +23,6 @@ app.get("/", (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(appPort, () => console.log(`> Server started on port ${appPort}`));
+dbConnect()
+  .then(() => app.listen(appPort, () => console.log(`> Server started on port ${appPort}`)))
+  .catch((e) => console.error(`> [Error] ${e}`));
