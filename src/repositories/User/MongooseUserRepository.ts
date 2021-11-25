@@ -5,8 +5,12 @@ import { UserNotFoundError } from "./errors/UserNotFoundError";
 import { IUserRepository } from "./IUserRepository";
 
 export class MongooseUserRepository implements IUserRepository {
-  async findByEmail(email: string): Promise<Either<UserNotFoundError, User>> {
-    const user = await userModel.findOne({ email });
+  async findByEmail(
+    email: string,
+    { selectPassword = false } = {}
+  ): Promise<Either<UserNotFoundError, User>> {
+    const user = await userModel.findOne({ email }).select(selectPassword ? "+password" : "");
+
     return user ? right(new User(user)) : left(new UserNotFoundError());
   }
 

@@ -1,5 +1,4 @@
 import express from "express";
-import dotenv from "dotenv";
 import morgan from "morgan";
 import helmet from "helmet";
 
@@ -7,11 +6,9 @@ import { notFound } from "./middlewares/notFound";
 import { errorHandler } from "./middlewares/errorHandler";
 import { api } from "./api";
 import { dbConnect } from "./lib/dbConnect";
-
-dotenv.config();
+import { appPort } from "./constants/configs";
 
 const app = express();
-const appPort = process.env.PORT || 3000;
 
 app.use(morgan("dev"));
 app.use(helmet());
