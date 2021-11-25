@@ -5,6 +5,7 @@ import helmet from "helmet";
 
 import { notFound } from "./middlewares/notFound";
 import { errorHandler } from "./middlewares/errorHandler";
+import { api } from "./api";
 import { dbConnect } from "./lib/dbConnect";
 
 dotenv.config();
@@ -16,9 +17,7 @@ app.use(morgan("dev"));
 app.use(helmet());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.json({ message: "Hello World" });
-});
+app.use("/api/v1", api);
 
 app.use(notFound);
 app.use(errorHandler);
